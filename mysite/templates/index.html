@@ -1,0 +1,274 @@
+{% extends "structure.html" %} {% block title %}User Panel{% endblock title %}
+{% block css %}
+ h1{ display:none; }
+  {% endblock css %} 
+  {% block body %}
+<div class="container-fluid"
+  style=" background-color: #F3F0F0;  "
+>
+  <div class="container">
+    <div class="row m-auto">
+      <div class="col-12">
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 150px;
+            margin-top: 30px;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+          "
+          class="Sub-Grid border rounded bg-white text-muted"
+        >
+          <h1>Cloud Event Management System</h1>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row mt-3">
+          <div class="col-12 col-md-4">
+            <section
+              style="box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2)"
+              class="Sub-Grid-3 border border-transparent rounded mt-3 text-bold text-white"
+            >
+              <table
+                style="
+                  border-radius: 15px;
+                  border-color: transparent;
+                  font-size: 15px;
+                  margin: auto;
+                  margin-bottom: auto;
+                "
+                class="border-0 table table-striped bg-white"
+              >
+                <thead>
+                  <tr>
+                    <th colspan="3 ">
+                      <div class="d-flex justify-content-center">
+                        <b class="ml-5 text-muted"> Conferences </b>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th scope="col"><span class="text-muted">No#</span></th>
+                    <th scope="col">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bookshelf text-warning"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z"
+                        />
+                      </svg>
+                    </th>
+                    <th scope="col">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-pin-angle-fill text-danger"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"
+                        />
+                      </svg>
+                    </th>
+                    <th scope="col">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-people text-primary"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"
+                        />
+                      </svg>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody style="max-height: 150px; overflow-y: scroll">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Dengue</td>
+                    <td>Lahore</td>
+                    <td>100+</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+          <div class="col-12 col-md-4">
+            <section
+              style="box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2)"
+              class="Sub-Grid-3 border border-transparent rounded mt-3 text-bold text-white"
+            >
+              <table
+                style="
+                  border-radius: 15px;
+                  border-color: transparent;
+                  font-size: 15px;
+                  margin: auto;
+                  margin-bottom: auto;
+                "
+                class="border-0 table table-striped bg-white"
+              >
+                <thead>
+                  <tr>
+                    <th colspan="3 ">
+                      <div class="d-flex justify-content-center">
+                        <b class="ml-5 text-muted"> Events </b>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th scope="col"><span class="text-muted">No#</span></th>
+                    <th scope="col">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bookshelf text-warning"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z"
+                        />
+                      </svg>
+                    </th>
+                    <th scope="col">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-pin-angle-fill text-danger"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"
+                        />
+                      </svg>
+                    </th>
+                    <th scope="col">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-people text-primary"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"
+                        />
+                      </svg>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody style="max-height: 150px; overflow-y: scroll">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Inauguration</td>
+                    <td>Karachi</td>
+                    <td>20/12/23</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+          <div class="col-12 col-md-4">
+            <section
+              style="box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2)"
+              class="Sub-Grid-3 border border-transparent rounded mt-3 text-bold text-white"
+            >
+              <table
+                style="
+                  border-radius: 15px;
+                  border-color: transparent;
+                  font-size: 15px;
+                  margin: auto;
+                  margin-bottom: auto;
+                "
+                class="border-0 table table-striped bg-white"
+              >
+                <thead>
+                  <tr>
+                    <th colspan="3 ">
+                      <div class="d-flex justify-content-center">
+                        <b class="ml-5 text-muted"> Meeting </b>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th scope="col"><span class="text-muted">No#</span></th>
+                    <th scope="col">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-bookshelf text-warning"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z"
+                        />
+                      </svg>
+                    </th>
+                    <th scope="col">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-pin-angle-fill text-danger"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"
+                        />
+                      </svg>
+                    </th>
+                    <th scope="col">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-people text-primary"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"
+                        />
+                      </svg>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody style="max-height: 150px; overflow-y: scroll">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>President</td>
+                    <td>Swat</td>
+                    <td>12/12/23</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

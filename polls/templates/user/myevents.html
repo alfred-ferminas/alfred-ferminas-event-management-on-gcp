@@ -1,0 +1,157 @@
+{% extends "user/structure.html" %}
+{% block title %}User Panel{% endblock title %}
+{% block css %}
+
+{% endblock css %}
+{% block body %}
+
+<div class="container p-4 m-4 d-flex justify-content-between">
+    <h1>My Events</h1>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        + Add new Event
+    </button>
+</div>
+
+<br><br>
+<div class="container">
+    <table class="table table-hover shadow-lg p-3 mb-5 bg-white rounded">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Event ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Date</th>
+            <th scope="col">Location</th>
+            <th scope="col">People Registered</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i, j in combined_data %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>e{{i.eventid}}</td>
+            <td>{{i.eventname}}</td>
+            <td>{{i.type}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.location}}</td>
+            <td>{{j.registrations_count}}</td>
+            
+            <td>
+              <a data-bs-toggle="modal" data-bs-target="#{{i.eventid}}">
+                <i class="fa-solid fa-pen mr-2" style="color: #000000;"></i>
+              </a>
+                            
+              <a href="myevents/d-{{i.eventid}}"><i class="fa-solid fa-bell fa-sm mr-2" style="color: #0087a8;"></i></a>
+              <a href="myevents/{{i.eventid}}"><i class="fa-solid fa-trash mr-2" style="color:red;"></i></a>
+            </td>
+          </tr>
+
+          <div class="modal fade" id="{{i.eventid}}" tabindex="-1" aria-labelledby="" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="label">Edit Event Information </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST" action="/myevents/saverecord/e-{{i.eventid}}"> {% csrf_token %}
+                  <div class="modal-body ">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Name</label>
+                        <input type="name" class="form-control" name="eventname" placeholder="Event Name" value="{{i.eventname}}">
+                    </div>
+                    <div class="mb-3">
+                      <label for="" class="form-label">Purpose</label>
+                      <textarea class="form-control" name="purpose" placeholder="e.g. Purpose of event" rows="5" >{{i.purpose}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="" class="form-label">Location</label>
+                      <input type="name" class="form-control" name="location" placeholder="Location" value="{{i.location}}">
+                    </div>
+                    <div class="mb-3 d-flex">
+                      <div class="mr-2">
+                        <label for="" class="form-label">Date</label>
+                        <input type="text" class="form-control" value="{{i.date}}" readonly >    
+                      </div>
+                      <div>
+                        <label for="" class="form-label">Date</label>
+                        <input type="date" class="form-control" name="date" >                        
+                      </div>
+                    </div>
+                    Choose
+                    <select class="form-control" name="typeofevent">
+                      <option value="Meeting" {% if i.type == 'Meeting' %}selected{% endif %}>Meeting</option>
+                      <option value="Conference" {% if i.type == 'Conference' %}selected{% endif %}>Conference</option>
+                      <option value="Workshop" {% if i.type == 'Workshop' %}selected{% endif %}>Workshop</option>
+                    </select>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" name="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+              </form>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+
+
+  
+  <!-- Modal -->
+  <form method="POST" enctype="multipart/form-data"> {%csrf_token %}
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="">Add new Event</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+          <div class="mb-3">
+              <label for="" class="form-label">Name</label>
+              <input type="name" class="form-control" name="eventname" placeholder="Event Name">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Purpose</label>
+            <textarea class="form-control" name="purpose" placeholder="e.g. Purpose of event" rows="5" ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Location</label>
+            <input type="name" class="form-control" name="location" placeholder="Location">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Date</label>
+            <input type="date" class="form-control" name="date" placeholder="name@exapmle.com">
+          </div>
+          Choose
+          <select class="form-control" name="typeofevent">
+            <option selected>--Select Event Type--</option>
+
+            <option value="Meeting">Meeting</option>
+            <option value="Conference">Conference</option>
+            <option value="Workshop">Workshop</option>
+            
+          </select>
+          <div class="mb-3">
+            <label for="" name="document" class="form-label">Document</label>
+            <input type="file" class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock body %}

@@ -1,0 +1,25 @@
+runtime: python39
+env: standard
+instance_class: F1
+
+handlers:
+  - url: /static/(.*)
+    static_files: static/\1
+    upload: static/.*
+  
+  - url: /.*
+    script: auto
+
+env_variables:
+  APPENGINE_URL: "https://alfred-event-manager-00001.uc.r.appspot.com"
+  DATABASE_URL: "mysql://event-management-00001:Abduijah00001@//cloudsql/alfred-event-manager-00001:us-central1:event-management-00001/alfreadems"
+  GS_BUCKET_NAME: "alfred-event-manager-00001_alfred-event-manager-00001.appspot.com"
+  SECRET_KEY: "r_40xw6&r_td08dhje^#%&b%g52e7gs@dc5c2ba0x2%66&8%i"
+
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+
+service_account: alfred-event-manager-00001@appspot.gserviceaccount.com
